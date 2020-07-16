@@ -7,11 +7,11 @@ from .managers import FollowManager
 
 
 class Follow(models.Model):
-    user = models.ForeignKey(getattr(settings, 'AUTH_USER_MODEL', 'auth.User'))
+    user = models.ForeignKey(getattr(settings, 'AUTH_USER_MODEL', 'auth.User'), on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
 
     # generic foreign key to target
-    target_content_type = models.ForeignKey(ContentType)
+    target_content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     target_object_id = models.PositiveIntegerField()
     target = GenericForeignKey('target_content_type', 'target_object_id')
 
