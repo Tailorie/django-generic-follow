@@ -23,6 +23,7 @@ class UserFollowMixin(object):
             target_content_type=item_type,
             target_object_id=item.pk
         )
+        return obj[0].id
 
     def unfollow(self, item):
         item_type = ContentType.objects.get_for_model(item)
