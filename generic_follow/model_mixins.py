@@ -18,12 +18,12 @@ class UserFollowMixin(object):
 
     def follow(self, item):
         item_type = ContentType.objects.get_for_model(item)
-        Follow.objects.get_or_create(
+        obj, created = Follow.objects.get_or_create(
             user=self,
             target_content_type=item_type,
             target_object_id=item.pk
         )
-        return obj[0].id
+        return obj.id
 
     def unfollow(self, item):
         item_type = ContentType.objects.get_for_model(item)
