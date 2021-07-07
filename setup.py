@@ -9,7 +9,7 @@ setup(
     long_description=open('README.rst').read(),
     author='Gizmag',
     author_email='tech@gizmag.com',
-    url='https://github.com/gizmag/django-generic-follow',
+    url='https://github.com/Tailorie/django-generic-follow',
     packages=find_packages(exclude=['tests']),
     install_requires=['django >= 1.8'],
     test_suite='runtests.runtests',
